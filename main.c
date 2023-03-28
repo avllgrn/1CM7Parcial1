@@ -1,9 +1,8 @@
 #include <stdio.h>
 int main(void){
-    printf("%d\n",5+2);
-    printf("%d\n",5-2);
-    printf("%d\n",5*2);
-    printf("%d\n",5/2);
-    printf("%d\n",5%2);
+    printf("%f\n",5.4+2.3);
+    printf("%f\n",5.4-2.3);
+    printf("%f\n",5.4*2.3);
+    printf("%f\n",5.4/2.3);
     return 0;
 }
