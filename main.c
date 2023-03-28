@@ -1,7 +1,9 @@
 #include <stdio.h>
 int main(void){
-    printf("Hello world!\t");
-    printf("Hello world!\t");
-    printf("Hello world!\t");
+    printf("%d\n",5+2);
+    printf("%d\n",5-2);
+    printf("%d\n",5*2);
+    printf("%d\n",5/2);
+    printf("%d\n",5%2);
     return 0;
 }
