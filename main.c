@@ -1,10 +1,15 @@
 #include <stdio.h>
 int main(void){
-    float a=5.4;
-    float b=2.3;
-    printf("%f\n",a+b);
-    printf("%f\n",a-b);
-    printf("%f\n",a*b);
-    printf("%f\n",a/b);
+    int a;
+    int b;
+    printf("Ingresa un valor para a ");
+    scanf("%d",&a);
+    printf("Ingresa un valor para b ");
+    scanf("%d",&b);
+    printf("%d\n",a+b);
+    printf("%d\n",a-b);
+    printf("%d\n",a*b);
+    printf("%d\n",a/b);
+    printf("%d\n",a%b);
     return 0;
 }
