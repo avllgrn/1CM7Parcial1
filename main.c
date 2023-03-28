@@ -1,8 +1,8 @@
 #include <stdio.h>
 int main(void){
-    printf("%f\n",5.4+2.3);
-    printf("%f\n",5.4-2.3);
-    printf("%f\n",5.4*2.3);
-    printf("%f\n",5.4/2.3);
+    int a;
+    int b;
+    printf("%d\n",a);
+    printf("%d\n",b);
     return 0;
 }
