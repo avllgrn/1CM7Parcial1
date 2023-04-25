@@ -1,99 +1,78 @@
 #include <stdio.h>
 #include <math.h>
 
-float sumaDosNumeros(float x, float y);//Declaracion de funcion
-float calculaAreaRectangulo(float b, float h);//Declaracion de funcion
-float calculaPerimetroRectangulo(float b, float h);//Declaracion de funcion
-float calculaX1(float a, float b, float c);//Declaracion de funcion
-float calculaX2(float a, float b, float c);//Declaracion de funcion
+int muestraMenuPideOpcion(void);
+float convierteARadianes(float xGrados);
+void calculaSenoVacia(void);
+float calculaSeno(float xGRados);
+void calculaCosenoVacia(void);
+float calculaCoseno(float xGRados);
+void calculaTangenteVacia(void);
+float calculaTangente(float xGRados);
 
 int main(void){
-	float a,b,c,x1,x2,base,altura,area,perimetro;
-    int opcion;
-    printf("1. Suma de dos numeros\n");
-    printf("2. Rectangulo\n");
-    printf("3. Raices\n");
-    printf("Cual opcion quieres? ");
-    scanf("%d",&opcion);
-
-    switch(opcion){
+    switch( muestraMenuPideOpcion() ){
         case 1:
-            //1. Pide dato(s)
-            printf("\nIngresa a ");
-            scanf("%f",&a);
-            printf("Ingresa b ");
-            scanf("%f",&b);
-
-            c=sumaDosNumeros(a,b);//Invocacion de funcion
-
-            //3. Muestra Resultado(s)
-            printf("\n%f + %f = %f\n",a,b,c);
+            calculaSenoVacia() ;
             break;
-
         case 2:
-            //1. Pide dato(s)
-            printf("\nDame base ");
-            scanf("%f",&base);
-            printf("Dame altura ");
-            scanf("%f",&altura);
-
-            area=calculaAreaRectangulo(base,altura);//Invocacion de funcion
-            perimetro=calculaPerimetroRectangulo(base, altura);//Invocacion de funcion
-
-            //3. Muestra Resultado(s)
-            printf("\nbase = %f\n",base);
-            printf("altura = %f\n",altura);
-            printf("area = %f\n",area);
-            printf("perimetro = %f\n",perimetro);
+            calculaCosenoVacia();
             break;
-
         case 3:
-            //1. Pide dato(s)
-            printf("\nDame a ");
-            scanf("%f",&a);
-            printf("Dame b ");
-            scanf("%f",&b);
-            printf("Dame c ");
-            scanf("%f",&c);
-
-            x1 = calculaX1(a,b,c);//Invocacion de funcion
-            x2 = calculaX2(a,b,c);//Invocacion de funcion
-
-            //3. Muestra Resultado(s)
-            printf("\nx1 = %f\n",x1);
-            printf("x2 = %f\n",x2);
+            calculaTangenteVacia();
             break;
-
         default:
-            printf("\nOpcion invalida!\n");
+            printf("Opcion invalida =^(");
             break;
     }
-
     return 0;
 }
 
-float sumaDosNumeros(float x, float y){//Definicion de funcion
-    float z;
-    z = x+y;//2.Calcula formula(s)
-    return z;
+int muestraMenuPideOpcion(void){
+    int opcion;
+    printf("1. Seno\n");
+    printf("2. Coseno\n");
+    printf("3. Tangente\n");
+    printf("Cual opcion quieres? ");
+    scanf("%d",&opcion);
+    return opcion;
 }
-float calculaAreaRectangulo(float b, float h){//Definicion de funcion
-    float a;
-    a = b*h;//2.Calcula formula(s)
-    return a;
+float convierteARadianes(float xGrados){
+    return xGrados*M_PI/180;
 }
-float calculaPerimetroRectangulo(float b, float h){//Definicion de funcion
-    float p;
-    p = 2*b + 2*h;//2.Calcula formula(s)
-    return p;
+void calculaSenoVacia(void){
+    float xGrados, seno;
+    printf("Ingresa grados ");
+    scanf("%f",&xGrados);
+    seno = calculaSeno(xGrados);
+    printf("seno(%f) = %f\n",xGrados,seno);
 }
-float calculaX1(float a, float b, float c){//Definicion de funcion
-    float x1;
-    x1 = (-b+sqrt(pow(b,2)-4*a*c))/(2*a);//2.Calcula formula(s)
-    return x1;
+float calculaSeno(float xGRados){
+    float xRadianes;
+    xRadianes = convierteARadianes(xGRados);
+    return sin(xRadianes);
 }
-float calculaX2(float a, float b, float c){//Definicion de funcion
-    float x2;
-    x2 = (-b-sqrt(pow(b,2)-4*a*c))/(2*a);//2.Calcula formula
-    return x2;
+void calculaCosenoVacia(void){
+    float xGrados, coseno;
+    printf("Ingresa grados ");
+    scanf("%f",&xGrados);
+    coseno = calculaCoseno(xGrados);
+    printf("coseno(%f) = %f\n",xGrados,coseno);
+}
+float calculaCoseno(float xGRados){
+    float xRadianes;
+    xRadianes = convierteARadianes(xGRados);
+    return cos(xRadianes);
+}
+void calculaTangenteVacia(void){
+    float xGrados, tangente;
+    printf("Ingresa grados ");
+    scanf("%f",&xGrados);
+    tangente = calculaTangente(xGrados);
+    printf("tangente(%f) = %f\n",xGrados,tangente);
+}
+float calculaTangente(float xGRados){
+    float xRadianes;
+    xRadianes = convierteARadianes(xGRados);
+    return tan(xRadianes);
 }
